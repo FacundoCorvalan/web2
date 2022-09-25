@@ -1,0 +1,14 @@
+ table{
+    border-collapse: collapse;
+ }
+ 
+ td{
+    border: solid 1px black;
+    padding: 4px;
+    text-align: center;
+ }
+
+ .colorear{
+    background-color: yellow;
+    font-weight: bold;
+ }
