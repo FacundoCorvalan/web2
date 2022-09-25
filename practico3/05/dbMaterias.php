@@ -17,3 +17,23 @@ function getSubjects(){
     
     return $subjects;
 }
+
+function insertSubject($subject_name,$teacher_name){
+    $db = getDB();
+    $query = $db->prepare("INSERT INTO materias (nombre, nombre_profesor) VALUES (?, ?)");
+    
+    $query->execute([$subject_name, $teacher_name]);
+    return $db -> lastInsertId();
+}
+
+
+//SELECT * FROM materias WHERE nombre LIKE '%or%'
+function searchSubject($subject_name){
+    $db = getDB();
+    $query = $db->prepare("SELECT * FROM materias WHERE nombre LIKE  ? ");
+    //$query->bindValue(1, "%fy", PDO::PARAM_STR);
+    $query->execute([$subject_name]); 
+    $subjects = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+    return $subjects;
+
+}

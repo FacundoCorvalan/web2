@@ -59,7 +59,7 @@ function insertPaymentByForm(){
         $deudor_anterior = $payment->deudor;
     }
 
-    if($deudor == $deudor_anterior){
+    if(!$deudor == $deudor_anterior){
         $id = insertPayment($deudor, $nro_cuota, $monto_capital, $fecha);
         header("Location: " . BASE_URL); 
 

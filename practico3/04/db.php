@@ -35,6 +35,6 @@ function insertPayment($debtor,$cant,$amount,$date){
     $query = $db->prepare("INSERT INTO pagos (deudor, cuota, cuota_capital, fecha_pago) VALUES (?, ?, ?, ?)");
     
     $query->execute([$debtor, $cant, $amount, $date]);
-    //NO FUNCIONA. REVISAR!!
+    
     return $db -> lastInsertId();
 }

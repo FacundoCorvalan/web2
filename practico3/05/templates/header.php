@@ -22,11 +22,22 @@
                     <button type="submit" class="btn btn-primary mt-2">Guardar</button>
                 </div>
             </div>
-    
         </div>
 
-
+        
+        
     </form>
+    <form action="search" method="get">
     
+        <div class="row">
+            <div class="col-9">
+                <div class="form-group">
+                    <label> Buscar</label>
+                    <input name="search_subject" type="text" class="form-control">
+                    <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </form>
 
 
