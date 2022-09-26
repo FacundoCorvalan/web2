@@ -1,5 +1,5 @@
 <?php
-require_once './app/Controller/products.controller.php';
+require_once './app/Controller/comments.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -12,18 +12,18 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action);
 
 // instancio el unico controller que existe por ahora
-$productController = new ProductController();
+$commentController = new CommentController();
 
 
 // tabla de ruteo
 switch ($params[0]) {
     case 'list':
-        $productController->showProducts();
+        $commentController->showComments();
         break;
-    case 'verProducto':
+    case 'add':
         // obtengo el parametro de la acción
         $id = $params[1];
-        $productController->showProduct($id);
+        $commentController->addComment($id);
         break;
     default:
         echo('404 Page not found');
